@@ -1,4 +1,4 @@
-# entorno de prueba
+# Entorno de Pruebas
 
 https://jhoncarlomareategi.000webhostapp.com/
 1. usuario tipo admin: test1      password test1.
