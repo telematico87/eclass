@@ -44,7 +44,7 @@ foreach ($users as $user): ?>
                 ['confirm' => '¿Estás seguro?'])
             ?>
             <?= $this->Html->link('Editar', 
-            ['controller'=>'users','action' => 'edit', $user->id],
+            ['action' => 'edit', $user->id],
             array( 'class' => 'btn btn-warning')
             ) ?>
             <?= $this->Html->link('Reset password', 
@@ -60,6 +60,6 @@ foreach ($users as $user): ?>
 <script>
  var username="<?php echo $user_login['username']; ?>";
 
- document.getElementById('username').innerHTML =username;
+ document.getElementById('username_').innerHTML =username;
 
 </script>

@@ -14,7 +14,7 @@ class UsersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'logout']);
+        $this->Auth->allow(['add', 'logout','edit']);
     }
 
      public function index()
@@ -58,7 +58,7 @@ class UsersController extends AppController
     {   
         $user_login=$this->Auth->user();
        
-        //if($user_login){ 
+        if($user_login){ 
             $user = $this->Users->newEntity();
             if ($this->request->is('post')) {
 
@@ -72,9 +72,9 @@ class UsersController extends AppController
                 $this->Flash->error(__('No se ha podido. añadir el usuario'));
             }
             $this->set('user', $user);
-        //}else{
-          //  return $this->redirect(['action' => 'login']);
-        //}
+        }else{
+           return $this->redirect(['action' => 'login']);
+        }
     }
 
     public function main()
@@ -85,6 +85,7 @@ class UsersController extends AppController
     }
     public function delete($id)
     {
+      
         $this->request->allowMethod(['post', 'delete']);
     
         $user = $this->Users->get($id);

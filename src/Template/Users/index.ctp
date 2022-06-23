@@ -4,8 +4,13 @@
 <?= $this->Form->create() ?>
 
         <legend><?= __('Usuarios y Contraseña') ?></legend>
-        <?= $this->Form->input('username') ?>
-        <?= $this->Form->input('password') ?>
+        <?= $this->Form->controls([
+                                'username' => ['label' => 'nombres']
+                ]); ?>
+                   <?= $this->Form->controls([
+                                'password' => ['label' => 'password']
+                ]); ?>
+ 
     
 <?= $this->Form->button(__('Login'),['class'=>'btn btn-primary']); ?>
 <?= $this->Form->end() ?>

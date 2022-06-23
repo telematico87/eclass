@@ -55,7 +55,17 @@ Router::scope('/', function (RouteBuilder $routes) {
      * Apply a middleware to the current route scope.
      * Requires middleware to be registered through `Application::routes()` with `registerMiddleware()`
      */
-    $routes->applyMiddleware('csrf');
+
+    
+    Router::scope('/', function ($routes) {
+        $routes->connect('/', ['controller' => 'users', 'action' => 'index']);
+        $routes->connect('/main', ['controller' => 'users', 'action' => 'main']);
+        $routes->connect('/add', ['controller' => 'users', 'action' => 'add']);
+        $routes->connect('/edit', ['controller' => 'users', 'action' => 'edit']);
+        $routes->connect('/delete/:id', ['controller' => 'users', 'action' => 'delete']);
+     });
+
+   
 
     /*
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

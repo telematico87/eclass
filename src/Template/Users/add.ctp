@@ -19,6 +19,7 @@
 <script>
  var username="<?php echo $user_login['username']; ?>";
 
- document.getElementById('username').innerHTML =username;
+ document.getElementById('username_').innerHTML =username;
+ $("#username").val("");
 
 </script>
