@@ -1,4 +1,4 @@
-# url de prueba
+# entorno de prueba
 
 https://jhoncarlomareategi.000webhostapp.com/
 
